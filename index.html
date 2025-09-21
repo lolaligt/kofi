@@ -2,13 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="styles.css?v=1" />
-  <title>My Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kofi • Layout Preview</title>
+  <style>
+    :root{
+      --bg: #0f172a;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --brand: #22c55e;
+      --ink: #062b12;
+      --maxw: 1100px;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; margin:0; }
+    body{
+      display:flex; flex-direction:column;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main{ flex:1; }
+    a{ color: inherit; text-decoration: none; }
+    .container{ max-width: var(--maxw); margin-inline:auto; padding: 0 1rem; }
+
+    .topbar{
+      background: rgba(17,24,39,.85);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: sticky; top:0; z-index:10; backdrop-filter: blur(6px);
+    }
+    .bar{ display:flex; align-items:center; justify-content:space-between; min-height:64px; }
+    .bar__left{ display:flex; gap:.6rem; flex-wrap:wrap; color: var(--muted); }
+    .bar__left a:hover{ color: var(--text); }
+    .dot{ opacity:.5; }
+    .logo--sm{ width:40px; height:40px; border-radius: 8px; box-shadow: var(--shadow); }
+
+    .hero{
+      padding: clamp(2.5rem, 6vw, 5rem) 0;
+      background:
+        radial-gradient(900px 500px at 10% -10%, rgba(34,197,94,.2), transparent 60%),
+        radial-gradient(900px 500px at 90% -20%, rgba(34,197,94,.12), transparent 60%);
+    }
+    .hero__grid{ display:grid; gap:2rem; align-items:center; grid-template-columns: 1fr; }
+    .hero__left{ justify-self:start; }
+    .logo--lg{ width:180px; height:auto; border-radius: 16px; box-shadow: var(--shadow); }
+    .hero__right h1{ margin:0 0 .25rem; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .lead{ color: var(--muted); margin: 0 0 1rem; }
+    @media (min-width: 860px){ .hero__grid{ grid-template-columns: 1fr 1.2fr; } }
+
+    .btn{ display:inline-block; padding:.7rem 1rem; border-radius:999px; border:1px solid rgba(255,255,255,.14); background:transparent; }
+    .btn--primary{ background: var(--brand); color: var(--ink); border-color: transparent; font-weight: 700; }
+    .btn--primary:hover{ filter: brightness(1.05); }
+
+    .footer{ border-top: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.03), transparent); padding: 2.5rem 0; }
+    .footer__grid{ display:flex; flex-wrap:wrap; gap:2rem; justify-content: space-around; text-align:center; }
+    .footer p{ color: var(--muted); margin:0.3rem 0; }
+
+    .logo-svg { display:block; }
+    .icon { width:30px; height:30px; margin-bottom:.5rem; fill: var(--brand); }
+    .footer-block{ flex:1; min-width:180px; }
+  </style>
 </head>
 <body>
-  <div>
-    Hello world
-  </div>
-  <img src="assets/logo.png" alt="Logo"/>
+  <header class="topbar">
+    <div class="container bar">
+      <div class="bar__left">
+        <a href="tel:+298720999">☎ +298 720999</a>
+        <span class="dot">•</span>
+        <a href="mailto:kofi@kofi.fo">kofi@kofi.fo</a>
+      </div>
+      <div class="bar__right">
+        <svg class="logo--sm logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Kofi logo">
+          <rect x="4" y="4" width="56" height="56" rx="10" fill="var(--brand)"/>
+          <text x="50%" y="55%" text-anchor="middle" font-size="28" font-family="Arial, Helvetica, sans-serif" fill="var(--ink)">K</text>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__left">
+          <svg class="logo--lg logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Kofi logo large">
+            <rect x="10" y="10" width="180" height="180" rx="24" fill="var(--brand)"/>
+            <text x="50%" y="58%" text-anchor="middle" font-size="110" font-family="Arial, Helvetica, sans-serif" fill="var(--ink)">K</text>
+          </svg>
+        </div>
+        <div class="hero__right">
+          <h1>Um Kofi</h1>
+          <p class="lead">Kofi fæst við fibur instalatiónir og test, uppsetan av parabol.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer-block">
+        <!-- House icon -->
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-10.5Z"/>
+        </svg>
+        <p><strong>kofi v/Kaj Johannessen</strong></p>
+        <p>Stóratún 14</p>
+        <p>FO 645 Æðuvík</p>
+        <p>V-tal / CVR 360783</p>
+      </div>
+
+      <div class="footer-block">
+        <!-- Phone icon -->
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.54.57.55 0 1 .45 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5c.55 0 1 .45 1 1 0 1.21.2 2.42.57 3.54a1 1 0 0 1-.24 1.05l-2.2 2.2z"/>
+        </svg>
+        <p><a href="tel:+298720999">+298 720999</a></p>
+      </div>
+
+      <div class="footer-block">
+        <!-- Envelope icon -->
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 6-8-6"/>
+        </svg>
+        <p><a href="mailto:kofi@kofi.fo">kofi@kofi.fo</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
