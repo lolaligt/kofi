@@ -7,14 +7,11 @@
   <style>
     :root{
       --bg: #ffffff;
-      --panel: #4169e1; /* royal blue */
-      --text: #ff8c00; /* orange text */
-      --muted: #ff8c00;
+      --panel: #003366; /* deeper blue for stronger contrast */
+      --text: #ff8c00; /* bright orange */
       --brand: #ff8c00; /* orange icons */
-      --ink: #062b12;
+      --ink: #000000; /* black text */
       --maxw: 1100px;
-      --radius: 14px;
-      --shadow: 0 8px 24px rgba(0,0,0,.15);
     }
     *{ box-sizing: border-box; }
     html,body{ height:100%; margin:0; }
@@ -22,75 +19,38 @@
       display:flex; flex-direction:column;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: var(--bg);
-      color: #000000;
+      color: var(--ink);
       line-height: 1.6;
     }
     main{ flex:1; }
     a{ color: inherit; text-decoration: none; }
-    .container{ max-width: var(--maxw); margin-inline:auto; padding: 0 1rem; }
-
-    .topbar{
-      background: var(--panel);
-      color: var(--text);
-      border-bottom: none;
-      position: sticky; top:0; z-index:10;
-    }
-    .bar{ display:flex; align-items:center; justify-content:space-between; min-height:64px; }
-    .bar__left{ display:flex; gap:.6rem; flex-wrap:wrap; color: var(--text); }
-    .bar__left a{ color: var(--text); }
-    .bar__left a:hover{ opacity:0.85; }
-    .dot{ opacity:.7; }
-    .brand-text{ font-size: 2rem; font-weight: 800; color: var(--text); }
+    .container{ max-width: var(--maxw); margin-inline:auto; padding: 0 1rem; text-align:center; }
 
     .hero{
       padding: clamp(2.5rem, 6vw, 5rem) 0;
       background: var(--bg);
-      color: #000000;
+      color: var(--ink);
     }
-    .hero__grid{ display:grid; gap:2rem; align-items:center; grid-template-columns: 1fr 1fr; }
-    .hero__left{ display:flex; justify-content:center; align-items:center; }
-    .logo--lg{ width:100%; max-width:600px; height:auto; box-shadow:none; border-radius:0; display:block; }
-    .hero__right{ align-self:center; }
-    .hero__right h1{ margin:0 0 .25rem; font-size: clamp(2rem, 5vw, 3rem); color:#000; }
-    .lead{ color:#000; margin: 0 0 1rem; }
+    .logo--lg{ width:100%; max-width:500px; height:auto; display:block; margin:0 auto; }
+    .hero h1{ margin-top:1rem; font-size: clamp(2rem, 5vw, 3rem); color: var(--panel); }
+    .lead{ color: var(--ink); margin: 0.5rem 0 1rem; }
 
-    .btn{ display:inline-block; padding:.7rem 1rem; border-radius:999px; border:1px solid #000; background:transparent; color:#000; }
-    .btn--primary{ background: var(--brand); color: #fff; border-color: transparent; font-weight: 700; }
-    .btn--primary:hover{ filter: brightness(1.05); }
-
-    .footer{ background: var(--panel); padding: 2.5rem 0; color: var(--text); }
+    .footer{ background: var(--panel); padding: 2.5rem 0; color: #ffffff; }
     .footer__grid{ display:flex; flex-wrap:wrap; gap:2rem; justify-content: space-around; text-align:center; }
-    .footer p{ color: var(--text); margin:0.3rem 0; }
+    .footer p{ color: #ffffff; margin:0.3rem 0; }
 
-    .logo-svg { display:block; }
-    .icon { width:30px; height:30px; margin-bottom:.5rem; fill: var(--brand); }
+    .icon { width:30px; height:30px; margin-bottom:.5rem; fill: var(--text); }
     .footer-block{ flex:1; min-width:180px; }
+    .footer a{ color: #ffffff; font-weight: bold; }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container bar">
-      <div class="bar__left">
-        <a href="tel:+298720999">☎ +298 720999</a>
-        <span class="dot">•</span>
-        <a href="mailto:kofi@kofi.fo">kofi@kofi.fo</a>
-      </div>
-      <div class="bar__right brand-text">
-        KOFI
-      </div>
-    </div>
-  </header>
-
   <main>
     <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__left">
-          <img src="assets/KOFI Logo.svg" alt="Kofi logo" class="logo--lg">
-        </div>
-        <div class="hero__right">
-          <h1>Um Kofi</h1>
-          <p class="lead">Kofi fæst við fibur instalatiónir og test, uppsetan av parabol.</p>
-        </div>
+      <div class="container">
+        <img src="assets/KOFI Logo.svg" alt="Kofi logo" class="logo--lg">
+        <h1>Um Kofi</h1>
+        <p class="lead">Kofi fæst við fibur instalatiónir og test, uppsetan av parabol.</p>
       </div>
     </section>
   </main>
@@ -98,9 +58,9 @@
   <footer class="footer" id="contact">
     <div class="container footer__grid">
       <div class="footer-block">
-        <!-- House icon -->
+        <!-- Business icon -->
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-10.5Z"/>
+          <path d="M4 22h16a1 1 0 0 0 1-1V9l-9-7-9 7v12a1 1 0 0 0 1 1z"/>
         </svg>
         <p><strong>kofi v/Kaj Johannessen</strong></p>
         <p>Stóratún 14</p>
@@ -109,19 +69,11 @@
       </div>
 
       <div class="footer-block">
-        <!-- Phone icon -->
+        <!-- Contact icon -->
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.54.57.55 0 1 .45 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5c.55 0 1 .45 1 1 0 1.21.2 2.42.57 3.54a1 1 0 0 1-.24 1.05l-2.2 2.2z"/>
+          <path d="M22 6H2v12h20V6zm-2 2v.511l-8 5.334-8-5.334V8h16zM4 16V9.489l8 5.333 8-5.333V16H4z"/>
         </svg>
-        <p><a href="tel:+298720999" style="color:var(--text);">+298 720999</a></p>
-      </div>
-
-      <div class="footer-block">
-        <!-- Envelope icon -->
-        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 6-8-6"/>
-        </svg>
-        <p><a href="mailto:kofi@kofi.fo" style="color:var(--text);">kofi@kofi.fo</a></p>
+        <p><a href="tel:+298720999">+298 720999</a> • <a href="mailto:kofi@kofi.fo">kofi@kofi.fo</a></p>
       </div>
     </div>
   </footer>
