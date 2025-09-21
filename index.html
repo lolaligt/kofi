@@ -40,16 +40,16 @@
     .bar__left a{ color: var(--text); }
     .bar__left a:hover{ opacity:0.85; }
     .dot{ opacity:.7; }
-    .logo--sm{ width:100px; height:auto; box-shadow:none; border-radius:0; }
+    .brand-text{ font-size: 2rem; font-weight: 800; color: var(--text); }
 
     .hero{
       padding: clamp(2.5rem, 6vw, 5rem) 0;
       background: var(--bg);
       color: #000000;
     }
-    .hero__grid{ display:grid; gap:2rem; align-items:center; grid-template-columns: auto 1fr; }
-    .hero__left{ justify-self:start; align-self:center; }
-    .logo--lg{ width:500px; height:auto; box-shadow:none; border-radius:0; display:block; margin-top:auto; margin-bottom:auto; }
+    .hero__grid{ display:grid; gap:2rem; align-items:center; grid-template-columns: 1fr 1fr; }
+    .hero__left{ display:flex; justify-content:center; align-items:center; }
+    .logo--lg{ width:100%; max-width:600px; height:auto; box-shadow:none; border-radius:0; display:block; }
     .hero__right{ align-self:center; }
     .hero__right h1{ margin:0 0 .25rem; font-size: clamp(2rem, 5vw, 3rem); color:#000; }
     .lead{ color:#000; margin: 0 0 1rem; }
@@ -75,8 +75,8 @@
         <span class="dot">•</span>
         <a href="mailto:kofi@kofi.fo">kofi@kofi.fo</a>
       </div>
-      <div class="bar__right">
-        <img src="assets/KOFI Logo.svg" alt="Kofi logo" class="logo--sm">
+      <div class="bar__right brand-text">
+        KOFI
       </div>
     </div>
   </header>
