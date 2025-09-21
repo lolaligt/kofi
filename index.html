@@ -38,7 +38,7 @@
     .bar__left{ display:flex; gap:.6rem; flex-wrap:wrap; color: var(--muted); }
     .bar__left a:hover{ color: var(--text); }
     .dot{ opacity:.5; }
-    .logo--sm{ width:40px; height:40px; border-radius: 8px; box-shadow: var(--shadow); }
+    .logo--sm{ width:40px; height:auto; border-radius: 8px; }
 
     .hero{
       padding: clamp(2.5rem, 6vw, 5rem) 0;
@@ -48,7 +48,7 @@
     }
     .hero__grid{ display:grid; gap:2rem; align-items:center; grid-template-columns: 1fr; }
     .hero__left{ justify-self:start; }
-    .logo--lg{ width:180px; height:auto; border-radius: 16px; box-shadow: var(--shadow); }
+    .logo--lg{ width:220px; height:auto; border-radius: 16px; box-shadow: var(--shadow); }
     .hero__right h1{ margin:0 0 .25rem; font-size: clamp(1.8rem, 4vw, 2.6rem); }
     .lead{ color: var(--muted); margin: 0 0 1rem; }
     @media (min-width: 860px){ .hero__grid{ grid-template-columns: 1fr 1.2fr; } }
@@ -75,10 +75,7 @@
         <a href="mailto:kofi@kofi.fo">kofi@kofi.fo</a>
       </div>
       <div class="bar__right">
-        <svg class="logo--sm logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Kofi logo">
-          <rect x="4" y="4" width="56" height="56" rx="10" fill="var(--brand)"/>
-          <text x="50%" y="55%" text-anchor="middle" font-size="28" font-family="Arial, Helvetica, sans-serif" fill="var(--ink)">K</text>
-        </svg>
+        <img src="assets/KOFI Logo.svg" alt="Kofi logo" class="logo--sm">
       </div>
     </div>
   </header>
@@ -87,10 +84,7 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__left">
-          <svg class="logo--lg logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Kofi logo large">
-            <rect x="10" y="10" width="180" height="180" rx="24" fill="var(--brand)"/>
-            <text x="50%" y="58%" text-anchor="middle" font-size="110" font-family="Arial, Helvetica, sans-serif" fill="var(--ink)">K</text>
-          </svg>
+          <img src="assets/KOFI Logo.svg" alt="Kofi logo" class="logo--lg">
         </div>
         <div class="hero__right">
           <h1>Um Kofi</h1>
